@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    id: 'assessment',
+    icon: '🔍',
+    title: 'Technology Assessment & Optimization',
+    description: 'A comprehensive evaluation of your existing IT environment — infrastructure, applications, security posture, and operational efficiency. You receive a prioritized optimization roadmap with projected cost savings, efficiency gains, and risk mitigation.',
+    details: ['4–8 week engagement', '$15,000 – $35,000'],
+  },
+  {
+    id: 'planning',
+    icon: '🗺️',
+    title: 'IT Strategic Planning & Roadmap',
+    description: 'A multi-phase engagement that aligns IT investments with your business strategy. Includes current-state assessment, future-state architecture definition, risk analysis, and a phased implementation roadmap with budget projections.',
+    details: ['8–12 week engagement', '$25,000 – $50,000'],
+  },
+  {
+    id: 'cost',
+    icon: '💰',
+    title: 'Cost Optimization & Vendor Management',
+    description: 'Focused engagement to identify and execute IT cost reductions. Includes license audits, vendor consolidation strategies, contract renegotiation support, and process automation opportunities. Clients typically see 15–30% IT cost reduction.',
+    details: ['6–10 week engagement', '$18,000 – $40,000'],
+  },
+  {
+    id: 'fractional',
+    icon: '⚡',
+    title: 'Fractional IT Leadership',
+    description: 'Ongoing strategic IT guidance and operational oversight for organizations without full-time IT leadership or that need additional capacity. Available 10–40 hours/month on a retainer basis — all the value of a VP-level IT leader without the full-time overhead.',
+    details: ['Ongoing monthly retainer', '$3,000 – $8,000/month'],
+  },
+  {
+    id: 'finserv',
+    icon: '🏦',
+    title: 'Financial Services Technology Consulting',
+    description: 'Specialized consulting for financial institutions addressing regulatory compliance, cybersecurity frameworks, digital banking transformation, and fintech integration. Deep domain expertise from direct experience at Zions Bancorporation and GE Capital.',
+    details: ['Scope varies by engagement', '$20,000 – $60,000+'],
+  },
+  {
+    id: 'governance',
+    icon: '🛡️',
+    title: 'IT Governance & Compliance',
+    description: 'Guidance on establishing IT governance frameworks, security policies, and compliance programs aligned with regulatory requirements. Includes SOC 2, ISO 27001, and financial services regulatory frameworks (FDIC, OCC, GLBA, SOX).',
+    details: ['6–12 week engagement', '$15,000 – $40,000'],
+  },
+];
+---
+
+<Layout
+  title="Services"
+  description="TechOptiCore LLC services: fractional IT leadership, technology assessments, cost optimization, and financial services consulting."
+>
+
+  <!-- Page Header -->
+  <section style="background: linear-gradient(135deg, #111111 0%, #1c1c1c 60%, #2a0a0b 100%); padding: 5rem 1.5rem 4rem;">
+    <div class="max-w-4xl mx-auto text-center">
+      <p style="color: #c0171d; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem;">Services</p>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #ffffff; margin-bottom: 1.25rem; letter-spacing: -0.02em;">
+        Strategic IT Consulting<br />Tailored to Your Organization
+      </h1>
+      <p style="color: #9ca3af; font-size: 1.05rem; line-height: 1.7; max-width: 600px; margin: 0 auto;">
+        Every engagement is built around measurable outcomes — cost reduction, operational efficiency, and strategic alignment that directly impacts your bottom line.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services List -->
+  <section style="padding: 5rem 1.5rem;">
+    <div class="max-w-5xl mx-auto" style="display: flex; flex-direction: column; gap: 2rem;">
+      {services.map(service => (
+        <div
+          id={service.id}
+          style="background-color: #1c1c1c; border: 1px solid #2a2a2a; border-radius: 0.75rem; padding: 2.5rem;"
+        >
+          <div style="display: flex; align-items: flex-start; gap: 1.25rem; flex-wrap: wrap;">
+            <div style="font-size: 2rem; flex-shrink: 0;">{service.icon}</div>
+            <div style="flex: 1; min-width: 250px;">
+              <h2 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem;">{service.title}</h2>
+              <p style="color: #9ca3af; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem;">{service.description}</p>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                {service.details.map(detail => (
+                  <span style="background-color: #2a2a2a; color: #d1d5db; font-size: 0.8rem; font-weight: 500; padding: 0.3rem 0.75rem; border-radius: 999px;">
+                    {detail}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background-color: #1c1c1c; border-top: 1px solid #2a2a2a; padding: 5rem 1.5rem; text-align: center;">
+    <div class="max-w-2xl mx-auto">
+      <h2 style="font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #ffffff; margin-bottom: 1rem;">
+        Not Sure Which Service Fits?
+      </h2>
+      <p style="color: #9ca3af; font-size: 1rem; line-height: 1.7; margin-bottom: 2rem;">
+        Start with a free 30-minute consultation. We'll assess your situation and recommend the right engagement for your organization.
+      </p>
+      <a
+        href="https://calendly.com/bryan-dutson/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="background-color: #c0171d; color: #ffffff; font-weight: 700; font-size: 1rem; padding: 0.9rem 2.25rem; border-radius: 0.4rem; text-decoration: none;"
+        onmouseover="this.style.backgroundColor='#8b1013'"
+        onmouseout="this.style.backgroundColor='#c0171d'"
+      >
+        Schedule a Free Consultation
+      </a>
+    </div>
+  </section>
+
+</Layout>

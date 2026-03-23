@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    icon: '⚡',
+    title: 'Fractional IT Leadership',
+    desc: 'VP/Director-level IT strategy and oversight without the full-time cost. Available 10–40 hours/month.',
+    link: '/services#fractional',
+  },
+  {
+    icon: '🔍',
+    title: 'Technology Assessment',
+    desc: 'Comprehensive audit of your IT environment with a prioritized roadmap and projected cost savings.',
+    link: '/services#assessment',
+  },
+  {
+    icon: '💰',
+    title: 'Cost Optimization',
+    desc: 'Identify and execute IT cost reductions through license consolidation, vendor management, and automation.',
+    link: '/services#cost',
+  },
+  {
+    icon: '🏦',
+    title: 'Financial Services Consulting',
+    desc: 'Specialized expertise in fintech, regulatory compliance, cybersecurity, and digital banking transformation.',
+    link: '/services#finserv',
+  },
+];
+
+const stats = [
+  { value: '15–30%', label: 'Typical IT cost reduction' },
+  { value: '10+', label: 'Years IT leadership experience' },
+  { value: '$50M–$1B', label: 'Client revenue range' },
+];
+---
+
+<Layout title="Fractional IT Leadership & Strategic Consulting">
+
+  <!-- Hero -->
+  <section style="background: linear-gradient(135deg, #111111 0%, #1c1c1c 60%, #2a0a0b 100%); padding: 6rem 1.5rem 5rem;">
+    <div class="max-w-5xl mx-auto text-center">
+      <p style="color: #c0171d; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1.25rem;">
+        Fractional IT Leadership · Strategic Technology Consulting
+      </p>
+      <h1 style="font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.15; color: #ffffff; margin-bottom: 1.5rem; letter-spacing: -0.02em;">
+        Enterprise-Level IT Strategy.<br />
+        <span style="color: #c0171d;">Without the Enterprise Price Tag.</span>
+      </h1>
+      <p style="color: #9ca3af; font-size: 1.1rem; line-height: 1.7; max-width: 680px; margin: 0 auto 2.5rem;">
+        TechOptiCore LLC brings VP and Director-level IT leadership to financial services firms and mid-market organizations — delivering measurable cost reductions, strategic alignment, and operational clarity.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a
+          href="https://calendly.com/bryan-dutson/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="background-color: #c0171d; color: #ffffff; font-weight: 700; font-size: 1rem; padding: 0.85rem 2rem; border-radius: 0.4rem; text-decoration: none;"
+          onmouseover="this.style.backgroundColor='#8b1013'"
+          onmouseout="this.style.backgroundColor='#c0171d'"
+        >
+          Schedule a Free Consultation
+        </a>
+        <a
+          href="/services"
+          style="border: 1px solid #3a3a3a; color: #d1d5db; font-weight: 600; font-size: 1rem; padding: 0.85rem 2rem; border-radius: 0.4rem; text-decoration: none;"
+          onmouseover="this.style.borderColor='#c0171d'; this.style.color='#ffffff'"
+          onmouseout="this.style.borderColor='#3a3a3a'; this.style.color='#d1d5db'"
+        >
+          View Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section style="background-color: #1c1c1c; border-top: 1px solid #2a2a2a; border-bottom: 1px solid #2a2a2a; padding: 2.5rem 1.5rem;">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      {stats.map(stat => (
+        <div>
+          <p style="font-size: 2rem; font-weight: 800; color: #c0171d; margin-bottom: 0.25rem;">{stat.value}</p>
+          <p style="color: #9ca3af; font-size: 0.9rem;">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section style="padding: 5rem 1.5rem;">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <p style="color: #c0171d; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">What We Do</p>
+        <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">
+          Strategic IT. Measurable Results.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {services.map(s => (
+          <a
+            href={s.link}
+            style="background-color: #1c1c1c; border: 1px solid #2a2a2a; border-radius: 0.75rem; padding: 2rem; text-decoration: none; display: block; transition: border-color 0.2s;"
+            onmouseover="this.style.borderColor='#c0171d'"
+            onmouseout="this.style.borderColor='#2a2a2a'"
+          >
+            <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">{s.icon}</div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin-bottom: 0.6rem;">{s.title}</h3>
+            <p style="color: #9ca3af; font-size: 0.92rem; line-height: 1.6;">{s.desc}</p>
+          </a>
+        ))}
+      </div>
+      <div class="text-center" style="margin-top: 2.5rem;">
+        <a href="/services" style="color: #c0171d; font-weight: 600; font-size: 0.95rem; text-decoration: none;">
+          View all services →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Serve -->
+  <section style="background-color: #1c1c1c; padding: 5rem 1.5rem;">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <p style="color: #c0171d; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Who We Serve</p>
+        <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">
+          Built for Organizations That Need<br />Senior IT Guidance Without Full-Time Overhead
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { label: 'Regional Financial Institutions', detail: 'Community banks, credit unions, regional financial services firms ($50M–$5B in assets)' },
+          { label: 'Professional Services Firms', detail: 'Accounting, legal, and management consulting firms requiring technology modernization' },
+          { label: 'Healthcare & Biotech', detail: 'Large healthcare systems and biotech organizations with complex IT environments and financial operations' },
+        ].map(item => (
+          <div style="background-color: #2a2a2a; border-radius: 0.75rem; padding: 1.75rem;">
+            <h3 style="font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 0.6rem;">{item.label}</h3>
+            <p style="color: #9ca3af; font-size: 0.88rem; line-height: 1.6;">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding: 5rem 1.5rem; text-align: center;">
+    <div class="max-w-2xl mx-auto">
+      <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 800; color: #ffffff; margin-bottom: 1rem; letter-spacing: -0.02em;">
+        Ready to Optimize Your IT?
+      </h2>
+      <p style="color: #9ca3af; font-size: 1rem; line-height: 1.7; margin-bottom: 2rem;">
+        Start with a free 30-minute consultation. We'll identify your biggest opportunities and whether TechOptiCore is the right fit.
+      </p>
+      <a
+        href="https://calendly.com/bryan-dutson/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="background-color: #c0171d; color: #ffffff; font-weight: 700; font-size: 1rem; padding: 0.9rem 2.25rem; border-radius: 0.4rem; text-decoration: none;"
+        onmouseover="this.style.backgroundColor='#8b1013'"
+        onmouseout="this.style.backgroundColor='#c0171d'"
+      >
+        Schedule Your Free Consultation
+      </a>
+    </div>
+  </section>
+
+</Layout>

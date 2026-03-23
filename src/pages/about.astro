@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const credentials = [
+  'VP/Director-level IT leadership — enterprise environments',
+  'Financial services domain expertise: Zions Bancorporation, GE Capital',
+  'Six Sigma Black Belt candidate',
+  'University of Utah alumni',
+  'ISACA professional association member',
+];
+
+const industries = [
+  'Regional banks & credit unions',
+  'Insurance & wealth management',
+  'Professional services firms',
+  'Healthcare & biotech organizations',
+  'Manufacturing & distribution',
+  'E-commerce & SaaS companies',
+];
+---
+
+<Layout
+  title="About"
+  description="Bryan Dutson — founder of TechOptiCore LLC. 10+ years of VP/Director-level IT leadership with deep financial services expertise."
+>
+
+  <!-- Page Header -->
+  <section style="background: linear-gradient(135deg, #111111 0%, #1c1c1c 60%, #2a0a0b 100%); padding: 5rem 1.5rem 4rem;">
+    <div class="max-w-4xl mx-auto text-center">
+      <p style="color: #c0171d; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem;">About</p>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #ffffff; margin-bottom: 1.25rem; letter-spacing: -0.02em;">
+        Enterprise Experience.<br />Independent Perspective.
+      </h1>
+      <p style="color: #9ca3af; font-size: 1.05rem; line-height: 1.7; max-width: 600px; margin: 0 auto;">
+        TechOptiCore was built on a simple insight: most growing organizations need senior IT leadership — but very few can afford a full-time VP of IT.
+      </p>
+    </div>
+  </section>
+
+  <!-- Bio -->
+  <section style="padding: 5rem 1.5rem;">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+      <div>
+        <img
+          src="/bryan-dutson.png"
+          alt="Bryan Dutson — Founder, TechOptiCore LLC"
+          style="width: 156px; height: 156px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 3px solid #2a2a2a;"
+        />
+        <p style="color: #c0171d; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Founder & Principal Consultant</p>
+        <h2 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin-bottom: 1.5rem; letter-spacing: -0.02em;">Bryan Dutson</h2>
+        <div style="display: flex; flex-direction: column; gap: 1rem; color: #9ca3af; font-size: 0.95rem; line-height: 1.75;">
+          <p>
+            With more than a decade of IT leadership experience at the VP and Director level, Bryan has led technology strategy, cost optimization, and digital transformation initiatives across enterprise financial services environments.
+          </p>
+          <p>
+            His background includes direct experience at <strong style="color: #d1d5db;">Zions Bancorporation</strong> and <strong style="color: #d1d5db;">GE Capital</strong> — organizations where regulatory complexity, security requirements, and operational scale are table stakes. That experience translates directly into results for clients navigating similar challenges.
+          </p>
+          <p>
+            TechOptiCore was founded to bridge the gap between strategic IT leadership and operational execution — delivering the kind of clear-eyed guidance that turns technology investments into measurable business outcomes.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div style="background-color: #1c1c1c; border: 1px solid #2a2a2a; border-radius: 0.75rem; padding: 2rem; margin-bottom: 1.5rem;">
+          <p style="color: #ffffff; font-weight: 700; font-size: 0.9rem; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.06em;">Credentials & Background</p>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+            {credentials.map(c => (
+              <li style="display: flex; align-items: flex-start; gap: 0.75rem; color: #9ca3af; font-size: 0.9rem; line-height: 1.5;">
+                <span style="color: #c0171d; font-weight: 700; flex-shrink: 0; margin-top: 0.1rem;">✓</span>
+                {c}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div style="background-color: #1c1c1c; border: 1px solid #2a2a2a; border-radius: 0.75rem; padding: 2rem;">
+          <p style="color: #ffffff; font-weight: 700; font-size: 0.9rem; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.06em;">Industries Served</p>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
+            {industries.map(i => (
+              <li style="display: flex; align-items: center; gap: 0.75rem; color: #9ca3af; font-size: 0.9rem;">
+                <span style="width: 6px; height: 6px; background-color: #c0171d; border-radius: 50%; flex-shrink: 0;"></span>
+                {i}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why TechOptiCore -->
+  <section style="background-color: #1c1c1c; border-top: 1px solid #2a2a2a; padding: 5rem 1.5rem;">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <p style="color: #c0171d; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Why TechOptiCore</p>
+        <h2 style="font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">
+          What Sets Us Apart
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          {
+            title: 'Financial Services Depth',
+            body: 'We understand the regulatory environment, security requirements, and operational constraints of financial institutions — not from a textbook, but from years inside those organizations.',
+          },
+          {
+            title: 'Strategy + Execution',
+            body: 'Unlike pure strategy firms, we couple recommendations with implementation guidance. We stay accountable for outcomes, not just deliverables.',
+          },
+          {
+            title: 'Lean & Cost-Effective',
+            body: 'As a focused independent firm, we provide enterprise-quality guidance without enterprise overhead. Every dollar you invest goes toward your results.',
+          },
+        ].map(item => (
+          <div style="background-color: #2a2a2a; border-radius: 0.75rem; padding: 2rem;">
+            <h3 style="font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 0.6rem;">{item.title}</h3>
+            <p style="color: #9ca3af; font-size: 0.88rem; line-height: 1.65;">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding: 5rem 1.5rem; text-align: center;">
+    <div class="max-w-2xl mx-auto">
+      <h2 style="font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #ffffff; margin-bottom: 1rem;">
+        Let's Talk About Your IT Challenges
+      </h2>
+      <p style="color: #9ca3af; font-size: 1rem; line-height: 1.7; margin-bottom: 2rem;">
+        A free 30-minute consultation is the fastest way to find out if TechOptiCore is the right partner for your organization.
+      </p>
+      <a
+        href="https://calendly.com/bryan-dutson/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="background-color: #c0171d; color: #ffffff; font-weight: 700; font-size: 1rem; padding: 0.9rem 2.25rem; border-radius: 0.4rem; text-decoration: none;"
+        onmouseover="this.style.backgroundColor='#8b1013'"
+        onmouseout="this.style.backgroundColor='#c0171d'"
+      >
+        Schedule a Free Consultation
+      </a>
+    </div>
+  </section>
+
+</Layout>
