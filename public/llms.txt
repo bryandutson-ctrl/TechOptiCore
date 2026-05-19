@@ -1,0 +1,16 @@
+# TechOptiCore LLC
+
+TechOptiCore LLC is a boutique consulting firm providing fractional IT leadership and strategic technology consulting services. We specialize in helping financial services and mid-market organizations modernize their infrastructure, optimize costs, and leverage AI to drive business value.
+
+## Core Services
+
+- **Fractional CIO/CTO:** Strategic IT leadership for organizations without full-time C-level requirements.
+- **IT Strategy & Roadmap:** Developing technology roadmaps aligned with business objectives.
+- **Cost Optimization:** Identifying inefficiencies and optimizing technology spend.
+- **AI Implementation:** Strategically integrating AI to improve operational efficiency and digital employee experience.
+
+## Learn More
+
+- [About Us](/about)
+- [Our Services](/services)
+- [Contact Us](/contact)
