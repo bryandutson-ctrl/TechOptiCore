@@ -9,6 +9,42 @@ interface Props {
 }
 
 const { title, description = "TechOptiCore LLC — Fractional IT Leadership & Strategic Technology Consulting for Financial Services and Mid-Market Organizations" } = Astro.props;
+
+const siteName = "TechOptiCore";
+const fullTitle = `${title} | TechOptiCore`;
+const siteUrl = Astro.site ?? new URL("https://techopticore.com");
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImage = new URL("/logo.png", siteUrl).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "TechOptiCore LLC",
+  description: "Fractional IT leadership and strategic technology consulting for financial services and mid-market organizations.",
+  url: siteUrl.href,
+  logo: ogImage,
+  image: ogImage,
+  areaServed: ["Utah", "United States"],
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "UT",
+    addressLocality: "Salt Lake Valley",
+    addressCountry: "US",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Bryan Dutson",
+    jobTitle: "Founder & Principal Consultant",
+  },
+  sameAs: ["https://www.linkedin.com/company/techopticore-llc/"],
+  knowsAbout: [
+    "Fractional IT Leadership",
+    "Technology Assessment",
+    "IT Cost Optimization",
+    "Financial Services Technology Consulting",
+    "IT Governance and Compliance",
+  ],
+};
 ---
 
 <!doctype html>
@@ -17,10 +53,27 @@ const { title, description = "TechOptiCore LLC — Fractional IT Leadership & St
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <title>{title} | TechOptiCore</title>
+    <title>{fullTitle}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
     <Nav />

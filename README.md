@@ -2,7 +2,7 @@
 
 Business website for TechOptiCore LLC. Built with Astro and Tailwind CSS.
 
-**Stack:** Astro v6 · Tailwind CSS v4 · Static output · GoDaddy hosting
+**Stack:** Astro v6 · Tailwind CSS v4 · Static output · Cloudflare (auto-deploy from GitHub)
 
 ---
 
@@ -33,85 +33,43 @@ Dev server runs at `http://localhost:4321` (or next available port).
 
 ---
 
-## Deploying to GoDaddy
+## Deploying (Cloudflare + GitHub)
 
-### Step 1 — Build the Site
+The site is hosted on Cloudflare, connected to the GitHub repo
+[`bryandutson-ctrl/TechOptiCore`](https://github.com/bryandutson-ctrl/TechOptiCore).
+**Deployment is automatic:** any push to the `main` branch triggers Cloudflare to
+run `npm run build` and publish the resulting `dist/` to the edge. There is no
+manual upload.
 
-Run the build command from the project folder:
-
-```sh
-npm run build
-```
-
-This generates a `dist/` folder containing all compiled HTML, CSS, and assets. That folder is your website.
-
-### Step 2 — Back Up Your Current Site (Recommended)
-
-Before uploading, save a copy of what's currently live:
-
-1. Log in to [godaddy.com](https://godaddy.com) → **My Products**
-2. Under your hosting plan, click **Manage** → **cPanel** → **File Manager**
-3. Open the **public_html** folder
-4. Select all files → **Compress** → download the zip as a backup
-
-### Step 3 — Upload the New Site
-
-1. In GoDaddy File Manager, open **public_html**
-2. Select and delete all existing files and folders (including any `.htaccess` file)
-3. On your computer, open the `dist/` folder, select everything inside it, and compress it into a zip file
-4. In File Manager, click **Upload** and upload the zip
-5. Once uploaded, select the zip → **Extract** → confirm the path is `/public_html/`
-6. Delete the zip file after extraction
-
-After extraction, `public_html` should contain:
-
-```
-public_html/
-├── index.html
-├── about/
-├── services/
-├── contact/
-├── _astro/
-├── favicon.ico
-├── favicon.svg
-├── logo.png
-└── bryan-dutson.png
-```
-
-### Step 4 — Verify
-
-Visit your domain and confirm:
-
-- [ ] Homepage loads correctly
-- [ ] Navigation links work (Services, About, Contact)
-- [ ] Profile photo appears on the About page
-- [ ] "Schedule a Free Consultation" buttons open Calendly in a new tab
-- [ ] Contact form on the Contact page submits correctly
-- [ ] Site looks correct on mobile
-
-### Troubleshooting
-
-**Site still shows the old design**
-Force a hard refresh: `Ctrl + Shift + R` (Windows) or `Cmd + Shift + R` (Mac). If still showing old site, clear your browser cache.
-
-**404 errors on pages**
-The files may have extracted into a subfolder inside `public_html` (e.g., `public_html/dist/index.html`). Check for a `dist/` folder inside `public_html` — if present, move its contents up one level, then delete the empty `dist/` folder.
-
-**Images not loading**
-Confirm `bryan-dutson.png` and `logo.png` are in the root of `public_html`, not inside a subfolder.
-
-**Blank page or missing styles**
-The `_astro/` folder must be present alongside `index.html`. If missing, re-upload it from `dist/_astro/`.
-
----
-
-## Pushing Updates
-
-When you make changes to the site:
+### Pushing Updates
 
 1. Edit the relevant `.astro` file in `src/pages/` or `src/components/`
-2. Run `npm run build` to regenerate `dist/`
-3. Upload the new `dist/` contents to `public_html`, overwriting the old files
+2. (Optional) Run `npm run build` and `npm run preview` to check locally
+3. Commit and push to `main`:
+   ```sh
+   git add -A
+   git commit -m "Describe the change"
+   git push origin main
+   ```
+4. Cloudflare builds and deploys automatically (usually under a minute). Watch the
+   build in the Cloudflare dashboard → Workers & Pages → **techopticore**.
+
+### Edge configuration
+
+- **Security headers & caching:** `public/_headers` (served at the edge for every route).
+- **HTTPS:** enforced by Cloudflare. Confirm **Always Use HTTPS** is enabled in the
+  Cloudflare dashboard (SSL/TLS → Edge Certificates).
+
+### Verify after deploy
+
+Hard-refresh (`Ctrl + Shift + R`) and confirm:
+
+- [ ] Homepage, Services, About, Contact all load
+- [ ] Profile photo appears on the About page
+- [ ] "Schedule a Free Consultation" buttons open Calendly in a new tab
+- [ ] Contact form submits correctly
+- [ ] Site looks correct on mobile
+- [ ] Security headers present (run the domain through [securityheaders.com](https://securityheaders.com))
 
 ---
 
